@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>REGISTER FORM</title>
+{% endblock %}
+{% block content %}
+<div class="container jumbotron">
+    <h2 style="text-align:center; color:orange;",  >SIGNUP FORM</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="REGISTER" class="btn btn-success btn-lg">
+
+    </form>
+</div>
+{% endblock %}

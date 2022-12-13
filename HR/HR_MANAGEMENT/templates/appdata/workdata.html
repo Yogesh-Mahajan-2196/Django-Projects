@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>SHOW WORK DATA</title>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">WORK SHEET</th>
+            <th scope="col">DATE</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{i.work_sheet}}</td>
+            <td>{{i.date}}</td>
+            <td><button class="btn btn-warning"><a href="{% url 'updaterecord_url' i.id %}">UPDATE</a></button></td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

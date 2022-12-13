@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>DELETE EMPLOYEE</title>
+{% endblock %}
+
+{% block content %}
+<div class="conatiner jumbotron">
+    <form method="post">
+        {% csrf_token %}
+        <p>Do u want to delete<span style="color:red ;">{{obj.id}}__{{obj.name}}</span> record?</p>
+        <input type="submit" value="YES" class="btn btn-danger">
+        <button class="btn btn-warning"><a href="{% url 'showemployee_url' %}">NO</a></button>
+    </form>
+</div>
+
+{% endblock %}

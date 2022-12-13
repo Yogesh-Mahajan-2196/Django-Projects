@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>SHOW EMPLOYEE</title>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">ADDRESS</th>
+            <th scope="col">CITY</th>
+            <th scope="col">MOBILE NO.</th>
+            <th scope="col">DEPARTMENT</th>
+            <th scope="col">SAL</th>
+            <th scope="col">DATE OF BIRTH</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in data %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.mail}}</td>
+            <td>{{i.addr}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.mob_no}}</td>
+            <td>{{i.department}}</td>
+            <td>{{i.sal}}</td>
+            <td>{{i.dob}}</td>
+            <td><button class="btn btn-warning"><a href="{% url 'updateemployee_url' i.id %}">UPDATE</a></button></td>
+            <td><button class="btn btn-danger"><a href="{% url 'deleteemployee_url' i.id %}">DELETE</a></button></td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}
